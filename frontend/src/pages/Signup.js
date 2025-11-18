@@ -1,8 +1,10 @@
+import API_BASE from '../api';
+
 export default function Signup(){
   const submit=async(e)=>{
     e.preventDefault();
     const f=new FormData(e.target);
-    await fetch('http://localhost:4000/api/auth/signup',{
+    await fetch(`${API_BASE}/api/auth/signup`,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
